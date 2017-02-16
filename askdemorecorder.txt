@@ -1,0 +1,19 @@
+[en]
+RECORDINGIN = We are now recording in your cstrike folder
+RECORDINGAT = Demo recording has been started at %s
+ASKRECORD = \wDo you want to record demo ?
+YESRECORD = \wYes, start recording
+NORECORD = \wDon't record
+WEWILLSTARTSOON = Just a moment and we'll start...
+DONTRECORD = Demo won't be recorded...
+MANUALRECORD = If you want to start recording use console commands
+
+[lt]
+RECORDINGIN = Mes dabar irasinejame i jusu cstrike aplanka
+RECORDINGAT = Demo irasinejimas buvo pradetas %s
+ASKRECORD = \wAr irasineti demo ?
+YESRECORD = \wTaip, pradeti irasyma
+NORECORD = \wNe, neirasineti
+WEWILLSTARTSOON = Tuojau pradesime irasyma...
+DONTRECORD = Demo nebus irasomas...
+MANUALRECORD = Jei norite pradeti filmavima naudokites konsoles komandomis
