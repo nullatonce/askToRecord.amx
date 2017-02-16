@@ -20,7 +20,7 @@ public plugin_init() {
 	g_RStartAfter 		= register_cvar( "amx_demo_rectime",	"15" );	// If it is less than 5, it will automatically set to 5, but willn't apply the changes to the console. I recoment to use default settings.
 	g_DemoName 		= register_cvar( "amx_demo_name",	"Autorecorded demo" );
 	g_DemoNamePrefix	= register_cvar( "amx_demo_prefix",	"AMXX" );
-	register_dictionary( "demorecorder.txt" );
+	register_dictionary( "askdemorecorder.txt" );
 }
 
 public client_putinserver( id ) {
@@ -33,10 +33,16 @@ public client_putinserver( id ) {
 }
 
 public askRecord( id ) {
-		new askRecordMenu = menu_create( "\rAr norite áraðinëti demo ?", "askRecordMenu_handler" );
+		static lang[128];
 		
-		menu_additem( askRecordMenu, "\wTaip, áraðinëti", "", 0 );
-		menu_additem( askRecordMenu, "\wNe, atsisakysiu", "", 0 );
+		formatex(lang, charsmax(lang), "%L",LANG_PLAYER,"ASKRECORD");
+		new askRecordMenu = menu_create( lang, "askRecordMenu_handler" );
+		
+		formatex(lang, charsmax(lang), "%L",id,"YESRECORD");
+		menu_additem( askRecordMenu, lang, "1", 0 );
+		
+		formatex(lang, charsmax(lang), "%L",id,"NORECORD");
+		menu_additem( askRecordMenu, lang, "2", 0 );
 		
 		menu_setprop( askRecordMenu, MPROP_EXIT, MEXIT_ALL );
 		
@@ -45,6 +51,9 @@ public askRecord( id ) {
 }
 
 public askRecordMenu_handler ( id, menu, item ) {
+	new szINamePrefix[64];
+	get_pcvar_string( g_DemoNamePrefix, szINamePrefix, 63 );
+	
 	switch ( item ) {
 		case 0 :
 		{
@@ -52,19 +61,19 @@ public askRecordMenu_handler ( id, menu, item ) {
 			if( delay < 5 )
 				set_pcvar_float( g_RStartAfter, ( delay = 5.0 ) );
 			set_task( delay, "Record", id );
-
-			client_print( id, print_chat, "Tuojau pradësite demo áraðà",);
 			
-			menu_destroy( menu );
-			return PLUGIN_HANDLED;
-		}
-		case 1: 
-		{
-			client_print( id, print_chat, "Demo nebus daromas." );
-			client_print( id, print_chat, "Norëdami pradëti daryti demo naudokitës konsolës komandomis" );
+			client_print( id, print_chat, "[%s] %L", szINamePrefix, LANG_PLAYER, "WEWILLSTARTSOON");
 			
 			menu_destroy( menu );
 			return PLUGIN_CONTINUE;
+		}
+		case 1: 
+		{
+			client_print( id, print_chat, "[%s] %L", szINamePrefix, LANG_PLAYER, "DONTRECORD");
+			client_print( id, print_chat, "[%s] %L", szINamePrefix, LANG_PLAYER, "MANUALRECORD");
+			
+			menu_destroy( menu );
+			return PLUGIN_HANDLED;
 		}
 	}
 	
