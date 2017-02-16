@@ -111,14 +111,3 @@ public Record( id ) {
 	client_print( id, print_chat, "[%s] %L ^"%s.dem^"", szINamePrefix, LANG_PLAYER, "RECORDINGIN", szSName );
 	client_print( id, print_chat, "[%s] %L", szINamePrefix, LANG_PLAYER, "RECORDINGAT", szTimedata );
 }
-@nullatonce
-
-Attach files by dragging & dropping,
-
-, or pasting from the clipboard.
-Styling with Markdown is supported
-
-    Contact GitHub API Training Shop Blog About 
-
-    © 2017 GitHub, Inc. Terms Privacy Security Status Help 
-
