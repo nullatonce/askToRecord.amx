@@ -1,18 +1,3 @@
-
-Skip to content
-
-    All gists
-    GitHub
-
-    New gist
-
-    0
-
-@nullatonce nullatonce/amx_askToRecord
-Created 6 hours ago
-Code
-Revisions 1
-amx_askToRecord
 /****************************************/
 /*					*/
 /*	Auto Demo Recorder		*/
@@ -48,9 +33,9 @@ public client_putinserver( id ) {
 }
 
 public askRecord( id ) {
-		new askRecordMenu = menu_create( "\rAr norite áraðinëti demo ?", "askRecordMenu_handler" );
+		new askRecordMenu = menu_create( "\rAr norite Ã¡raÃ°inÃ«ti demo ?", "askRecordMenu_handler" );
 		
-		menu_additem( askRecordMenu, "\wTaip, áraðinëti", "", 0 );
+		menu_additem( askRecordMenu, "\wTaip, Ã¡raÃ°inÃ«ti", "", 0 );
 		menu_additem( askRecordMenu, "\wNe, atsisakysiu", "", 0 );
 		
 		menu_setprop( askRecordMenu, MPROP_EXIT, MEXIT_ALL );
@@ -68,7 +53,7 @@ public askRecordMenu_handler ( id, menu, item ) {
 				set_pcvar_float( g_RStartAfter, ( delay = 5.0 ) );
 			set_task( delay, "Record", id );
 
-			client_print( id, print_chat, "Tuojau pradësite demo áraðà",);
+			client_print( id, print_chat, "Tuojau pradÃ«site demo Ã¡raÃ°Ã ",);
 			
 			menu_destroy( menu );
 			return PLUGIN_HANDLED;
@@ -76,7 +61,7 @@ public askRecordMenu_handler ( id, menu, item ) {
 		case 1: 
 		{
 			client_print( id, print_chat, "Demo nebus daromas." );
-			client_print( id, print_chat, "Norëdami pradëti daryti demo naudokitës konsolës komandomis" );
+			client_print( id, print_chat, "NorÃ«dami pradÃ«ti daryti demo naudokitÃ«s konsolÃ«s komandomis" );
 			
 			menu_destroy( menu );
 			return PLUGIN_CONTINUE;
@@ -126,14 +111,3 @@ public Record( id ) {
 	client_print( id, print_chat, "[%s] %L ^"%s.dem^"", szINamePrefix, LANG_PLAYER, "RECORDINGIN", szSName );
 	client_print( id, print_chat, "[%s] %L", szINamePrefix, LANG_PLAYER, "RECORDINGAT", szTimedata );
 }
-@nullatonce
-
-Attach files by dragging & dropping,
-
-, or pasting from the clipboard.
-Styling with Markdown is supported
-
-    Contact GitHub API Training Shop Blog About 
-
-    © 2017 GitHub, Inc. Terms Privacy Security Status Help 
-
