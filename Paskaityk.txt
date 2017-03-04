@@ -1,0 +1,9 @@
+Ğá failà patartina skaityt nenaudojant paprasto notepato, nes nesuprasit nieko.
+(ğis failas parağytas notepad++ pagalba, tai tik instrukcija visiğkiems naujokams)
+
+* kur sukelti failus ?
+> askdemorecorder.txt - dedame á savo  LANG papkæ, kuria rasite -> addons\amxmodx\data\lang
+> askToRecord.sma - ğá failà teks susikompiliuoti paèiam ( ğis failas ne apie tai ) 
+> askToRecord.amxx - ğtai kà gausime susikompiliave (pervadinimas nepades)
+> askToRecord.amxx - paparağèiausias pluginas kurá keliam á plugins kuris keliamas á plugins papkæ
+> Pabaiga - visus likusius failus galime iğtrinti, nes tai github'o failai, kurie jums visiğkai nereikalingi
